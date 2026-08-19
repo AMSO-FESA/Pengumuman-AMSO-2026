@@ -19,6 +19,7 @@
             --gold: #ffd700;
             --text-main: #f1f5f9;
             --text-muted: #94a3b8;
+            --border: rgba(255, 255, 255, 0.1);
         }
 
         * {
@@ -281,13 +282,13 @@
             display: block;
         }
 
-        /* ================= MAIN CONTENT (HANYA MEDALI BESAR) ================= */
+        /* ================= MAIN CONTENT (MEDALI LEBIH BESAR & LEBIH KE BAWAH) ================= */
         main {
             flex: 1;
             display: flex;
             justify-content: center;
             align-items: center;
-            padding: 40px 0 80px;
+            padding: 100px 0 100px;
         }
 
         .medal-container {
@@ -297,102 +298,49 @@
         }
 
         .big-medal {
-            font-size: clamp(8rem, 20vw, 14rem);
+            font-size: clamp(12rem, 30vw, 20rem);
             color: var(--gold);
-            filter: drop-shadow(0 0 40px rgba(255, 215, 0, 0.6));
+            filter: drop-shadow(0 0 50px rgba(255, 215, 0, 0.7));
             animation: medalFloat 3.5s infinite alternate ease-in-out;
             cursor: pointer;
             transition: transform 0.3s ease;
         }
 
         .big-medal:hover {
-            transform: scale(1.1);
-            filter: drop-shadow(0 0 60px rgba(255, 215, 0, 0.9));
+            transform: scale(1.08);
+            filter: drop-shadow(0 0 75px rgba(255, 215, 0, 0.95));
         }
 
         @keyframes medalFloat {
             0% {
                 transform: translateY(0) scale(1);
-                filter: drop-shadow(0 0 30px rgba(255, 215, 0, 0.4));
+                filter: drop-shadow(0 0 40px rgba(255, 215, 0, 0.5));
             }
             100% {
-                transform: translateY(-15px) scale(1.05);
-                filter: drop-shadow(0 0 55px rgba(255, 215, 0, 0.85));
+                transform: translateY(-20px) scale(1.04);
+                filter: drop-shadow(0 0 70px rgba(255, 215, 0, 0.9));
             }
         }
 
-        /* ================= FOOTER ================= */
+        /* ================= FOOTER (PERSIS KATEGORI) ================= */
         footer {
-            background: rgba(5, 7, 15, 0.95);
-            border-top: 1px solid var(--card-border);
-            padding: 35px 0 20px;
+            background: #050811;
+            color: white;
+            padding: 35px 20px;
+            text-align: center;
+            border-top: 1px solid var(--border);
+            width: 100%;
             margin-top: auto;
         }
 
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 25px;
-            padding-bottom: 25px;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
+        footer strong {
+            font-size: 18px;
         }
 
-        .footer-brand h3 {
-            font-family: 'Orbitron', sans-serif;
-            color: #fff;
-            font-size: 1.2rem;
-            margin-bottom: 5px;
-        }
-
-        .footer-brand p {
-            color: var(--text-muted);
-            font-size: 0.85rem;
-        }
-
-        .footer-contacts {
-            display: flex;
-            gap: 15px;
-            align-items: center;
-        }
-
-        .contact-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            color: var(--text-main);
-            text-decoration: none;
-            font-size: 1.25rem;
-            transition: all 0.3s ease;
-        }
-
-        .contact-btn.wa:hover {
-            border-color: #25D366;
-            color: #25D366;
-            background: rgba(37, 211, 102, 0.12);
-            box-shadow: 0 0 15px rgba(37, 211, 102, 0.4);
-            transform: translateY(-3px);
-        }
-
-        .contact-btn.ig:hover {
-            border-color: #E1306C;
-            color: #E1306C;
-            background: rgba(225, 48, 108, 0.12);
-            box-shadow: 0 0 15px rgba(225, 48, 108, 0.4);
-            transform: translateY(-3px);
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 20px;
-            color: var(--text-muted);
-            font-size: 0.8rem;
+        footer p {
+            margin-top: 7px;
+            font-size: 11px;
+            opacity: .55;
         }
     </style>
 </head>
@@ -422,13 +370,13 @@
         <header>
             <div class="logo-group">
                 <div class="logo-item">
-                    <img src="yasarini.png" alt="Logo Yasarini" title="Yayasan Ardhya Garini">
+                    <img src="https://raw.githubusercontent.com/AMSO-FESA/AMSO-2026/main/yasarini.png" alt="Logo Yasarini" title="Yayasan Ardhya Garini">
                 </div>
                 <div class="logo-item">
-                    <img src="fesa.png" alt="Logo FESA" title="Festival Edukasi Sekolah Angkasa">
+                    <img src="https://raw.githubusercontent.com/AMSO-FESA/AMSO-2026/main/fesa.png" alt="Logo FESA" title="Festival Edukasi Sekolah Angkasa">
                 </div>
                 <div class="logo-item">
-                    <img src="amso.png" alt="Logo AMSO" title="Angkasa Mathematic and Science Olympiad">
+                    <img src="https://raw.githubusercontent.com/AMSO-FESA/AMSO-2026/main/amso.png" alt="Logo AMSO" title="Angkasa Mathematic and Science Olympiad">
                 </div>
             </div>
 
@@ -459,29 +407,10 @@
         </main>
     </div>
 
-    <!-- ================= FOOTER ================= -->
+    <!-- ================= FOOTER (PERSIS KATEGORI) ================= -->
     <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <h3>AMSO 2026</h3>
-                    <p>Angkasa Mathematic and Science Olympiad</p>
-                </div>
-
-                <div class="footer-contacts">
-                    <a href="https://wa.me/6287878691995" target="_blank" class="contact-btn wa" title="WhatsApp">
-                        <i class="fa-brands fa-whatsapp"></i>
-                    </a>
-                    <a href="https://www.instagram.com/yasarinipusat/" target="_blank" class="contact-btn ig" title="Instagram">
-                        <i class="fa-brands fa-instagram"></i>
-                    </a>
-                </div>
-            </div>
-
-            <div class="footer-bottom">
-                <p>&copy; 2026 Angkasa Mathematic and Science Olympiad. All Rights Reserved.</p>
-            </div>
-        </div>
+        <strong>AMSO 2026</strong>
+        <p>Angkasa Mathematic & Science Olympiad</p>
     </footer>
 
 </body>
