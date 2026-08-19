@@ -202,7 +202,7 @@
         .logo-item img[src="fesa.png"], .logo-item img[src*="fesa.png"] { height: 100px !important; }
         .logo-item img[alt="Logo AMSO"], .logo-item img[src="amso.png"], .logo-item img[src*="amso.png"] { height: 100px !important; }
 
-        /* ================= NAV & DROPDOWN ANTI-LEPAS ================= */
+        /* ================= NAV & DROPDOWN PERSIS HALAMAN UTAMA ================= */
         nav {
             background: rgba(15, 21, 42, 0.8);
             border: 1px solid var(--card-border);
@@ -215,8 +215,6 @@
             justify-content: center;
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
             margin-bottom: 30px;
-            position: relative;
-            z-index: 1000;
         }
 
         nav a {
@@ -242,61 +240,47 @@
         .dropdown {
             position: relative;
             display: inline-flex;
+            padding-bottom: 15px; 
+            margin-bottom: -15px;
         }
 
         .dropdown-content {
             display: none;
             position: absolute;
-            top: calc(100% - 2px); 
+            top: 100%; 
             left: 50%;
             transform: translateX(-50%);
-            background: rgba(15, 21, 42, 0.98);
+            background: rgba(15, 21, 42, 0.95);
             border: 1px solid var(--card-border);
             border-radius: 15px;
-            min-width: 210px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.7);
+            min-width: 190px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.6);
             backdrop-filter: blur(15px);
-            z-index: 9999;
+            z-index: 100;
             padding: 8px;
             text-align: left;
         }
 
-        /* Zona aktif tak kasat mata di sekeliling menu */
-        .dropdown-content::before {
-            content: '';
-            position: absolute;
-            top: -15px;
-            left: -15px;
-            right: -15px;
-            bottom: -15px;
-            background: transparent;
-            z-index: -1;
-        }
-
         .dropdown-content a {
             color: var(--text-muted);
-            padding: 12px 16px;
+            padding: 10px 15px;
             text-decoration: none;
-            display: flex;
-            align-items: center;
-            width: 100%;
+            display: block;
             border-radius: 10px;
             font-size: 0.85rem;
             white-space: nowrap;
             transition: all 0.2s ease;
-            background: transparent;
-            border: 1px solid transparent;
         }
 
         .dropdown-content a:hover {
-            background: rgba(0, 210, 255, 0.18);
+            background: rgba(0, 210, 255, 0.15);
             color: var(--neon-blue);
-            border-color: rgba(0, 210, 255, 0.3);
+            border: none;
+            box-shadow: none;
             transform: none;
         }
 
-        .dropdown:hover .dropdown-content,
-        .dropdown.open .dropdown-content {
+        .dropdown:hover .dropdown-content {
             display: block;
         }
 
@@ -397,18 +381,18 @@
                 </div>
             </div>
 
-            <!-- NAVBAR -->
+            <!-- NAVBAR PERSIS HALAMAN UTAMA -->
             <nav>
                 <a href="https://amso-fesa.github.io/AMSO-2026/"><i class="fa-solid fa-house"></i> Beranda</a>
                 <a href="https://amso-fesa.github.io/Timeline-AMSO-2026/"><i class="fa-solid fa-calendar-days"></i> Timeline</a>
                 <a href="https://amso-fesa.github.io/Kategori-AMSO-2026/"><i class="fa-solid fa-layer-group"></i> Kategori</a>
                 <a href="https://amso-fesa.github.io/BukuPanduan-AMSO-2026/"><i class="fa-solid fa-clipboard-check"></i> Buku Panduan</a>
                 
-                <div class="dropdown" id="dropdownMenu">
-                    <a href="javascript:void(0)" id="dropdownToggle"><i class="fa-solid fa-folder-open"></i> Data <i class="fa-solid fa-angle-down" style="font-size: 10px; margin-left: 2px;"></i></a>
+                <div class="dropdown">
+                    <a href="#"><i class="fa-solid fa-folder-open"></i> Data <i class="fa-solid fa-angle-down" style="font-size: 10px; margin-left: 2px;"></i></a>
                     <div class="dropdown-content">
-                        <a href="https://amso-fesa.github.io/Data-Peserta-AMSO-2026/"><i class="fa-solid fa-users" style="margin-right: 8px;"></i> Data Peserta</a>
-                        <a href="https://amso-fesa.github.io/Administrasi-AMSO-2026/"><i class="fa-solid fa-envelope-open-text" style="margin-right: 8px;"></i> Administrasi</a>
+                        <a href="https://amso-fesa.github.io/Data-Peserta-AMSO-2026/"><i class="fa-solid fa-users" style="margin-right: 6px;"></i> Data Peserta</a>
+                        <a href="https://amso-fesa.github.io/Administrasi-AMSO-2026/"><i class="fa-solid fa-envelope-open-text" style="margin-right: 6px;"></i> Administrasi</a>
                     </div>
                 </div>
 
@@ -430,21 +414,5 @@
         <p>Angkasa Mathematic & Science Olympiad</p>
     </footer>
 
-    <!-- HELPER JAVASCRIPT: BUFFER HOVER ANTI-HILANG -->
-    <script>
-        const dropdown = document.getElementById('dropdownMenu');
-        let timeoutId;
-
-        dropdown.addEventListener('mouseenter', () => {
-            clearTimeout(timeoutId);
-            dropdown.classList.add('open');
-        });
-
-        dropdown.addEventListener('mouseleave', () => {
-            timeoutId = setTimeout(() => {
-                dropdown.classList.remove('open');
-            }, 300); // Jeda buffer 300ms agar kursor bebas bergerak ke item kedua tanpa hilang
-        });
-    </script>
 </body>
 </html>
