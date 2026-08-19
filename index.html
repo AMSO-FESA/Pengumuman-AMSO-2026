@@ -19,7 +19,6 @@
             --gold: #ffd700;
             --text-main: #f1f5f9;
             --text-muted: #94a3b8;
-            --border: rgba(255, 255, 255, 0.1);
         }
 
         * {
@@ -42,13 +41,9 @@
             min-height: 100vh;
             display: flex;
             flex-direction: column;
-            background-image: 
-                radial-gradient(circle at 15% 20%, rgba(0, 210, 255, 0.12) 0%, transparent 40%),
-                radial-gradient(circle at 85% 80%, rgba(157, 78, 221, 0.15) 0%, transparent 40%);
-            background-attachment: fixed;
         }
 
-        /* ================= ANIMASI LATAR BELAKANG SAINS & SPACE ================= */
+        /* ================= ANIMASI LATAR BELAKANG KAYA SAINS & SPACE ================= */
         .space-bg {
             position: fixed;
             top: 0;
@@ -61,6 +56,7 @@
             background: radial-gradient(circle at 50% 50%, #0b0f25 0%, #03050a 100%);
         }
 
+        /* Bintang Berkelap-kelip */
         .stars {
             position: absolute;
             width: 100%;
@@ -82,6 +78,7 @@
             100% { opacity: 0.8; }
         }
 
+        /* Galaksi / Nebula Melayang */
         .galaxy-blob {
             position: absolute;
             border-radius: 50%;
@@ -99,59 +96,57 @@
             100% { transform: translate(40px, 60px) scale(1.15); }
         }
 
+        /* Elemen Melayang */
         .floating-icon {
             position: absolute;
             color: var(--neon-blue);
-            opacity: 0.5;
+            opacity: 0.55;
             user-select: none;
             filter: drop-shadow(0 0 12px currentColor);
         }
 
-        .el-rocket { top: 22% !important; left: 8% !important; font-size: 2.8rem; color: var(--neon-blue); animation: flyRocket 16s infinite ease-in-out; }
-        .el-astronaut-big { top: 58% !important; right: 8% !important; font-size: 4rem !important; color: var(--gold); animation: floatBigAstronaut 14s infinite alternate ease-in-out; opacity: 0.65; }
-        .el-astronaut-small { bottom: 18% !important; left: 10% !important; font-size: 2rem; color: var(--neon-purple); animation: floatItem2 10s infinite alternate ease-in-out; opacity: 0.4; }
+        .el-rocket { top: 12%; right: 7%; font-size: 2.8rem; color: var(--neon-blue); animation: flyRocket 14s infinite ease-in-out; }
+        .el-astronaut1 { bottom: 15%; left: 4%; font-size: 2.5rem; color: var(--gold); animation: floatItem1 11s infinite alternate ease-in-out; }
+        .el-astronaut2 { top: 35%; left: 8%; font-size: 2rem; color: var(--neon-purple); animation: floatItem2 9s infinite alternate ease-in-out; opacity: 0.4; }
         
-        .el-atom { top: 32% !important; right: 18% !important; font-size: 2.3rem; color: var(--gold); animation: rotateAtom 14s infinite linear; }
-        .el-flask { bottom: 25% !important; left: 15% !important; font-size: 2.3rem; color: var(--neon-blue); animation: floatItem1 10s infinite alternate ease-in-out; }
-        .el-magnet { top: 65% !important; left: 8% !important; font-size: 2.2rem; color: #ff4757; animation: floatItem2 12s infinite alternate ease-in-out; }
-        .el-satellite { top: 15% !important; right: 35% !important; font-size: 2.2rem; color: var(--text-muted); animation: flySatellite 20s infinite linear; }
+        /* Alat Fisika & Sains */
+        .el-atom { top: 18%; left: 15%; font-size: 2.2rem; color: var(--gold); animation: rotateAtom 12s infinite linear; }
+        .el-flask { bottom: 25%; right: 12%; font-size: 2.3rem; color: var(--neon-blue); animation: floatItem1 8s infinite alternate ease-in-out; }
+        .el-magnet { top: 60%; left: 12%; font-size: 2.2rem; color: #ff4757; animation: floatItem2 10s infinite alternate ease-in-out; }
+        .el-satellite { top: 8%; left: 40%; font-size: 2.2rem; color: var(--text-muted); animation: flySatellite 16s infinite linear; }
 
-        .el-math1 { top: 28% !important; left: 22% !important; font-size: 2rem; font-family: 'Orbitron', sans-serif; color: var(--gold); animation: floatItem2 8s infinite alternate ease-in-out; font-weight: 800; }
-        .el-math2 { bottom: 35% !important; right: 30% !important; font-size: 2.2rem; font-family: 'Orbitron', sans-serif; color: var(--neon-blue); animation: floatItem1 10s infinite alternate ease-in-out; font-weight: 800; }
+        /* Simbol Matematika */
+        .el-math1 { top: 25%; right: 25%; font-size: 2rem; font-family: 'Orbitron', sans-serif; color: var(--gold); animation: floatItem2 7s infinite alternate ease-in-out; font-weight: 800; }
+        .el-math2 { top: 75%; left: 25%; font-size: 2.2rem; font-family: 'Orbitron', sans-serif; color: var(--neon-blue); animation: floatItem1 9s infinite alternate ease-in-out; font-weight: 800; }
+        .el-math3 { top: 50%; right: 8%; font-size: 1.8rem; font-family: 'Orbitron', sans-serif; color: var(--neon-purple); animation: floatItem2 8s infinite alternate ease-in-out; font-weight: 800; }
 
         @keyframes flyRocket {
-            0% { transform: translate(0, 0) rotate(35deg); }
-            50% { transform: translate(-45px, 60px) rotate(30deg); }
-            100% { transform: translate(0, 0) rotate(35deg); }
-        }
-
-        @keyframes floatBigAstronaut {
-            0% { transform: translateY(0) rotate(-5deg) scale(1); }
-            100% { transform: translateY(-50px) rotate(10deg) scale(1.05); }
+            0% { transform: translate(0, 0) rotate(45deg); }
+            50% { transform: translate(-50px, 70px) rotate(40deg); }
+            100% { transform: translate(0, 0) rotate(45deg); }
         }
 
         @keyframes floatItem1 {
-            0% { transform: translateY(0) rotate(-12deg); }
+            0% { transform: translateY(0) rotate(-10deg); }
             100% { transform: translateY(-45px) rotate(15deg); }
         }
 
         @keyframes floatItem2 {
-            0% { transform: translateY(0) rotate(12deg); }
-            100% { transform: translateY(40px) rotate(-15deg); }
+            0% { transform: translateY(0) rotate(10deg); }
+            100% { transform: translateY(35px) rotate(-15deg); }
         }
 
         @keyframes rotateAtom {
             0% { transform: rotate(0deg) scale(1); }
-            50% { transform: rotate(180deg) scale(1.15); }
+            50% { transform: rotate(180deg) scale(1.1); }
             100% { transform: rotate(360deg) scale(1); }
         }
 
         @keyframes flySatellite {
-            0% { transform: translateX(-35vw) translateY(0) rotate(0deg); }
-            100% { transform: translateX(115vw) translateY(-25px) rotate(360deg); }
+            0% { transform: translateX(-50vw) translateY(0) rotate(0deg); }
+            100% { transform: translateX(100vw) translateY(-30px) rotate(360deg); }
         }
 
-        /* ================= CONTAINER & HEADER ================= */
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -161,11 +156,11 @@
             width: 100%;
         }
 
+        /* ================= HEADER ================= */
         header {
             padding: 30px 0 25px;
             text-align: center;
             position: relative;
-            z-index: 100;
         }
 
         .logo-group {
@@ -199,11 +194,11 @@
             filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.2));
         }
 
-        .logo-item img[src="yasarini.png"], .logo-item img[src*="yasarini.png"] { height: 65px !important; }
-        .logo-item img[src="fesa.png"], .logo-item img[src*="fesa.png"] { height: 100px !important; }
-        .logo-item img[alt="Logo AMSO"], .logo-item img[src="amso.png"], .logo-item img[src*="amso.png"] { height: 100px !important; }
+        .logo-item img[src="yasarini.png"] { height: 65px !important; }
+        .logo-item img[src="fesa.png"] { height: 100px !important; }
+        .logo-item img[alt="Logo AMSO"], .logo-item img[src="amso.png"] { height: 100px !important; }
 
-        /* ================= NAVIGASI UTAMA ================= */
+        /* Navigation Menu */
         nav {
             background: rgba(15, 21, 42, 0.8);
             border: 1px solid var(--card-border);
@@ -216,11 +211,9 @@
             justify-content: center;
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
             margin-bottom: 30px;
-            position: relative;
-            z-index: 1000;
         }
 
-        nav a, .dropdown-btn {
+        nav a {
             color: var(--text-muted);
             text-decoration: none;
             padding: 10px 22px;
@@ -228,79 +221,63 @@
             font-size: 0.9rem;
             font-weight: 600;
             transition: all 0.3s ease;
-            display: inline-flex;
+            display: flex;
             align-items: center;
             gap: 8px;
-            cursor: pointer;
-            border: none;
-            background: transparent;
-            font-family: inherit;
         }
 
-        nav a:hover, nav a.active, .dropdown:hover .dropdown-btn, .dropdown.active .dropdown-btn {
+        nav a:hover, nav a.active {
             color: #fff;
             background: linear-gradient(135deg, rgba(0, 210, 255, 0.3), rgba(157, 78, 221, 0.3));
             border: 1px solid rgba(0, 210, 255, 0.5);
             box-shadow: 0 0 15px rgba(0, 210, 255, 0.2);
         }
 
-        /* ================= DROPDOWN MENU KOKOH ================= */
+        /* Dropdown */
         .dropdown {
             position: relative;
-            display: inline-block;
+            display: inline-flex;
+            padding-bottom: 15px; 
+            margin-bottom: -15px;
         }
 
         .dropdown-content {
             display: none;
             position: absolute;
-            top: 100%;
+            top: 100%; 
             left: 50%;
             transform: translateX(-50%);
-            background: #0f152a;
-            border: 1px solid rgba(0, 210, 255, 0.3);
+            background: rgba(15, 21, 42, 0.95);
+            border: 1px solid var(--card-border);
             border-radius: 15px;
-            min-width: 210px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.8);
-            z-index: 99999;
-            padding: 10px;
-            margin-top: 5px;
-        }
-
-        /* Jembatan transparan atas */
-        .dropdown-content::before {
-            content: '';
-            position: absolute;
-            top: -12px;
-            left: 0;
-            width: 100%;
-            height: 15px;
-            background: transparent;
+            min-width: 190px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.6);
+            backdrop-filter: blur(15px);
+            z-index: 100;
+            padding: 8px;
+            text-align: left;
         }
 
         .dropdown-content a {
             color: var(--text-muted);
-            padding: 12px 18px;
+            padding: 10px 15px;
             text-decoration: none;
-            display: flex;
-            align-items: center;
-            width: 100%;
+            display: block;
             border-radius: 10px;
             font-size: 0.85rem;
             white-space: nowrap;
             transition: all 0.2s ease;
-            box-sizing: border-box;
         }
 
         .dropdown-content a:hover {
-            background: rgba(0, 210, 255, 0.2) !important;
-            color: #00d2ff !important;
-            box-shadow: none !important;
-            border: 1px solid rgba(0, 210, 255, 0.3);
+            background: rgba(0, 210, 255, 0.15);
+            color: var(--neon-blue);
+            border: none;
+            box-shadow: none;
+            transform: none;
         }
 
-        /* Hover & Active via class */
-        .dropdown:hover .dropdown-content,
-        .dropdown.active .dropdown-content {
+        .dropdown:hover .dropdown-content {
             display: block;
         }
 
@@ -313,55 +290,109 @@
             padding: 40px 0 80px;
         }
 
-        .medal-only-display {
+        .medal-container {
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
         .big-medal {
-            font-size: clamp(9rem, 22vw, 15rem);
+            font-size: clamp(8rem, 20vw, 14rem);
             color: var(--gold);
-            filter: drop-shadow(0 0 45px rgba(255, 215, 0, 0.65));
-            animation: medalGlow 3.5s infinite alternate ease-in-out;
+            filter: drop-shadow(0 0 40px rgba(255, 215, 0, 0.6));
+            animation: medalFloat 3.5s infinite alternate ease-in-out;
             cursor: pointer;
             transition: transform 0.3s ease;
         }
 
         .big-medal:hover {
-            transform: scale(1.12);
-            filter: drop-shadow(0 0 70px rgba(255, 215, 0, 0.95));
+            transform: scale(1.1);
+            filter: drop-shadow(0 0 60px rgba(255, 215, 0, 0.9));
         }
 
-        @keyframes medalGlow {
+        @keyframes medalFloat {
             0% {
-                transform: scale(1) translateY(0);
-                filter: drop-shadow(0 0 35px rgba(255, 215, 0, 0.45));
+                transform: translateY(0) scale(1);
+                filter: drop-shadow(0 0 30px rgba(255, 215, 0, 0.4));
             }
             100% {
-                transform: scale(1.08) translateY(-14px);
-                filter: drop-shadow(0 0 65px rgba(255, 215, 0, 0.9));
+                transform: translateY(-15px) scale(1.05);
+                filter: drop-shadow(0 0 55px rgba(255, 215, 0, 0.85));
             }
         }
 
         /* ================= FOOTER ================= */
         footer {
-            background: #050811;
-            color: white;
-            padding: 35px 20px;
+            background: rgba(5, 7, 15, 0.95);
+            border-top: 1px solid var(--card-border);
+            padding: 35px 0 20px;
+            margin-top: auto;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 25px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .footer-brand h3 {
+            font-family: 'Orbitron', sans-serif;
+            color: #fff;
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        .footer-brand p {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        .footer-contacts {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .contact-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-main);
+            text-decoration: none;
+            font-size: 1.25rem;
+            transition: all 0.3s ease;
+        }
+
+        .contact-btn.wa:hover {
+            border-color: #25D366;
+            color: #25D366;
+            background: rgba(37, 211, 102, 0.12);
+            box-shadow: 0 0 15px rgba(37, 211, 102, 0.4);
+            transform: translateY(-3px);
+        }
+
+        .contact-btn.ig:hover {
+            border-color: #E1306C;
+            color: #E1306C;
+            background: rgba(225, 48, 108, 0.12);
+            box-shadow: 0 0 15px rgba(225, 48, 108, 0.4);
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom {
             text-align: center;
-            border-top: 1px solid var(--border);
-            width: 100%;
-        }
-
-        footer strong {
-            font-size: 18px;
-        }
-
-        footer p {
-            margin-top: 7px;
-            font-size: 11px;
-            opacity: .55;
+            padding-top: 20px;
+            color: var(--text-muted);
+            font-size: 0.8rem;
         }
     </style>
 </head>
@@ -374,8 +405,8 @@
         <div class="galaxy-blob blob-3"></div>
 
         <div class="floating-icon el-rocket"><i class="fa-solid fa-rocket"></i></div>
-        <div class="floating-icon el-astronaut-big"><i class="fa-solid fa-user-astronaut"></i></div>
-        <div class="floating-icon el-astronaut-small"><i class="fa-solid fa-space-shuttle"></i></div>
+        <div class="floating-icon el-astronaut1"><i class="fa-solid fa-user-astronaut"></i></div>
+        <div class="floating-icon el-astronaut2"><i class="fa-solid fa-space-shuttle"></i></div>
         <div class="floating-icon el-satellite"><i class="fa-solid fa-satellite"></i></div>
 
         <div class="floating-icon el-atom" title="Fisika Kuantum/Atom"><i class="fa-solid fa-atom"></i></div>
@@ -384,75 +415,74 @@
 
         <div class="floating-icon el-math1">&pi;</div>
         <div class="floating-icon el-math2">&sum;</div>
+        <div class="floating-icon el-math3">&radic;</div>
     </div>
 
-    <!-- ================= HEADER ================= -->
     <div class="container">
         <header>
             <div class="logo-group">
                 <div class="logo-item">
-                    <img src="https://raw.githubusercontent.com/AMSO-FESA/AMSO-2026/main/yasarini.png" alt="Logo Yasarini" title="Yayasan Ardhya Garini">
+                    <img src="yasarini.png" alt="Logo Yasarini" title="Yayasan Ardhya Garini">
                 </div>
                 <div class="logo-item">
-                    <img src="https://raw.githubusercontent.com/AMSO-FESA/AMSO-2026/main/fesa.png" alt="Logo FESA" title="Festival Edukasi Sekolah Angkasa">
+                    <img src="fesa.png" alt="Logo FESA" title="Festival Edukasi Sekolah Angkasa">
                 </div>
                 <div class="logo-item">
-                    <img src="https://raw.githubusercontent.com/AMSO-FESA/AMSO-2026/main/amso.png" alt="Logo AMSO" title="Angkasa Mathematic and Science Olympiad">
+                    <img src="amso.png" alt="Logo AMSO" title="Angkasa Mathematic and Science Olympiad">
                 </div>
             </div>
 
-            <!-- NAVBAR DENGAN DROPDOWN STABIL -->
+            <!-- NAVBAR DENGAN STRUKTUR PERSIS HALAMAN UTAMA -->
             <nav>
                 <a href="https://amso-fesa.github.io/AMSO-2026/"><i class="fa-solid fa-house"></i> Beranda</a>
                 <a href="https://amso-fesa.github.io/Timeline-AMSO-2026/"><i class="fa-solid fa-calendar-days"></i> Timeline</a>
                 <a href="https://amso-fesa.github.io/Kategori-AMSO-2026/"><i class="fa-solid fa-layer-group"></i> Kategori</a>
                 <a href="https://amso-fesa.github.io/BukuPanduan-AMSO-2026/"><i class="fa-solid fa-clipboard-check"></i> Buku Panduan</a>
                 
-                <div class="dropdown" id="navDropdown">
-                    <button class="dropdown-btn" type="button">
-                        <i class="fa-solid fa-folder-open"></i> Data <i class="fa-solid fa-angle-down" style="font-size: 10px; margin-left: 2px;"></i>
-                    </button>
+                <div class="dropdown">
+                    <a href="#"><i class="fa-solid fa-folder-open"></i> Data <i class="fa-solid fa-angle-down" style="font-size: 10px; margin-left: 2px;"></i></a>
                     <div class="dropdown-content">
-                        <a href="https://amso-fesa.github.io/Data-Peserta-AMSO-2026/"><i class="fa-solid fa-users" style="margin-right: 8px;"></i> Data Peserta</a>
-                        <a href="https://amso-fesa.github.io/Administrasi-AMSO-2026/"><i class="fa-solid fa-envelope-open-text" style="margin-right: 8px;"></i> Administrasi</a>
+                        <a href="https://amso-fesa.github.io/Data-Peserta-AMSO-2026/"><i class="fa-solid fa-users" style="margin-right: 6px;"></i> Data Peserta</a>
+                        <a href="https://amso-fesa.github.io/Administrasi-AMSO-2026/"><i class="fa-solid fa-envelope-open-text" style="margin-right: 6px;"></i> Administrasi</a>
                     </div>
                 </div>
 
                 <a href="#" class="active"><i class="fa-solid fa-trophy"></i> Pengumuman</a>
             </nav>
         </header>
-    </div>
 
-    <!-- ================= MAIN CONTENT (HANYA GAMBAR MEDALI BESAR) ================= -->
-    <main class="container">
-        <div class="medal-only-display">
-            <i class="fa-solid fa-medal big-medal" title="Pengumuman AMSO 2026"></i>
-        </div>
-    </main>
+        <!-- ================= MAIN CONTENT (HANYA MEDALI BESAR) ================= -->
+        <main>
+            <div class="medal-container">
+                <i class="fa-solid fa-medal big-medal" title="Pengumuman AMSO 2026"></i>
+            </div>
+        </main>
+    </div>
 
     <!-- ================= FOOTER ================= -->
     <footer>
-        <strong>AMSO 2026</strong>
-        <p>Angkasa Mathematic & Science Olympiad</p>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>AMSO 2026</h3>
+                    <p>Angkasa Mathematic and Science Olympiad</p>
+                </div>
+
+                <div class="footer-contacts">
+                    <a href="https://wa.me/6287878691995" target="_blank" class="contact-btn wa" title="WhatsApp">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                    <a href="https://www.instagram.com/yasarinipusat/" target="_blank" class="contact-btn ig" title="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Angkasa Mathematic and Science Olympiad. All Rights Reserved.</p>
+            </div>
+        </div>
     </footer>
 
-    <!-- INTERAKSI KLIK & HOVER AGAR DIJAMIN BISA DIKLIK -->
-    <script>
-        const dd = document.getElementById('navDropdown');
-        const btn = dd.querySelector('.dropdown-btn');
-
-        // Klik tombol Data untuk toggle buka/tutup
-        btn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            dd.classList.toggle('active');
-        });
-
-        // Tutup jika klik di luar
-        document.addEventListener('click', (e) => {
-            if (!dd.contains(e.target)) {
-                dd.classList.remove('active');
-            }
-        });
-    </script>
 </body>
 </html>
